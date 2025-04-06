@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Sección de el formulario acompañado de la imagen -->
+    <div class="container-login">
+        <div class="form-login">
+            <h1 data-i18n="IniciarSesion">Iniciar Sesión</h1>
+            <form id="formulario_login">
+                <label for="correo" data-i18n="Usuario">Usuario</label>
+                <input type="text" id="loginUsername" name="nombre" placeholder="Ingrese su usuario"
+                    data-i18n-placeholder="CampoUsuario" required>
+
+                <label for="contraseña" data-i18n="Contraseña">Contraseña</label>
+                <input type="password" id="loginPassword" name="contraseña" placeholder="Ingrese su contraseña"
+                    data-i18n-placeholder="CampoContraseña" required>
+
+                <button type="submit" data-i18n="IniciarSesion">Iniciar Sesión</button>
+                <button onclick="location.href='/signin/'" type="button" data-i18n="Registrarse">Registrarse</button>
+
+
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- Sección de el formulario acompañado de la imagen -->
+    <div class="megaContenedor">
+        <div class="container">
+            <div class="formulario">
+                <h1 data-i18n="Formulario">Formulario de <br>Contacto</h1>
+                <form id="formulario">
+                    <label for="nombre" data-i18n="Nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre"
+                        data-i18n-placeholder="CampoNombre">
+
+                    <label for="correo" data-i18n="Correo">Correo</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ingrese su correo"
+                        data-i18n-placeholder="CampoCorreo">
+
+                    <label for="asunto" data-i18n="Asunto">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Ingrese el asunto"
+                        data-i18n-placeholder="CampoAsunto">
+
+                    <label for="mensaje" data-i18n="Mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje"
+                        data-i18n-placeholder="CampoMensaje"></textarea>
+
+                    <button type="submit" data-i18n="Enviar">Enviar Información</button>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="imagen">
+            <img src="../static\images\maletas.jpg" alt="Maletas en el aeropuerto">
+        </div>
+    </div>
+
+    <!-- Sección de sede -->
+    <div class="sedes-container">
+        <h2 data-i18n="Sedes">Nuestras Sedes</h2>
+        <div class="imagen-sede">
+            <img src="../static\images\oficina.jpg" alt="Nuestras Sedes">
+        </div>
+        <div class="sedes-info">
+            <div class="sede">
+                <h3>Rio de Janeiro</h3>
+                <p>Find our offices around the world and feel free to pay us a visit!</p>
+            </div>
+            <div class="sede">
+                <h3 data-i18n="Medellin">Medellín</h3>
+                <p>Frederiksberg<br>Nordhavn<br>Sychavn</p>
+            </div>
+            <div class="sede">
+                <h3 data-i18n="Cordoba">Córdoba</h3>
+                <p>Hackney Wick<br>Brixton<br>Elephant & Castle</p>
+            </div>
+        </div>
+
+    </div>
+    {% endblock content %}

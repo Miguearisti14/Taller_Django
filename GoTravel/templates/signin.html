@@ -1,0 +1,25 @@
+{% extends "layout.html"%}
+{% block content %}
+
+    <!-- Sección de el formulario acompañado de la imagen -->
+
+    <div class="container-login">
+        <div class="form-login">
+            <h1 data-i18n="Registrarse">Registrarse</h1>
+            <form id="registerForm">
+                <label for="registerUsername" data-i18n="Usuario">Usuario</label>
+                <input type="email" id="registerUsername" name="Usuario" placeholder="Ingrese su usuario"
+                    data-i18n-placeholder="CampoUsuario" required>
+
+                <label for="registerPassword" data-i18n="Contraseña">Contraseña</label>
+                <input type="password" id="registerPassword" name="contraseña" placeholder="Ingrese su contraseña"
+                    data-i18n-placeholder="CampoContraseña" required>
+
+                <button type="submit" data-i18n="Registrarse">Registrarse</button>
+            </form>
+
+
+        </div>
+    </div>
+
+{% endblock content %}

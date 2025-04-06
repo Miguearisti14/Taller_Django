@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+    <div class="slider">
+        <div class="slides">
+            <img class="slide" src="../static/images/banner1.jpg" alt="Image #1">
+            <img class="slide" src="../static/images/banner2.jpg" alt="Image #2">
+            <img class="slide" src="../static/images/banner3.jpg" alt="Image #3">
+            <img class="slide" src="../static/images/banner4.jpg" alt="Image #4">
+
+            <!-- Texto dentro del slider -->
+            <p class="eslogan" data-i18n="eslogan">Viaja...<br>Descubre...<br>y Vive</p>
+        </div>
+
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
+
+
+
+
+    <h2 id="Destinos" data-i18n="visita">Visita Múltiples Destinos</h2>
+
+    <!-- Galeria de Imágenes -->
+    <div class="galeria">
+
+        <div class="item">
+            <img src="../static/images/gallery1.jpg" alt="">
+            <p data-i18n="Paris">París</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery2.jpg" alt="">
+            <p>Punta Cana</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery3.jpg" alt="">
+            <p>Machu Picchu</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery4.jpg" alt="">
+            <p>Buenos Aires</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery5.jpg" alt="">
+            <p>Rio de Janeiro</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery6.jpg" alt="">
+            <p data-i18n="Egipto">Egipto</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery7.jpg" alt="">
+            <p data-i18n="Turquia">Turquía</p>
+        </div>
+        <div class="item">
+            <img src="../static/images/gallery8.jpg" alt="">
+            <p data-i18n="Roma">Roma</p>
+        </div>
+    </div>
+
+    <h2 id="Experiencias" data-i18n="Vive">Vive la Experiencia</h2>
+
+    <!-- Video Embebido -->
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l9WJ6PspaW4?si=rKI2x1e5_2p9nAoL"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+        encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+    </div>
+    {% endblock content %}
