@@ -6,13 +6,14 @@
     <div class="container-login">
         <div class="form-login">
             <h1 data-i18n="Registrarse">Registrarse</h1>
-            <form id="registerForm">
-                <label for="registerUsername" data-i18n="Usuario">Usuario</label>
-                <input type="email" id="registerUsername" name="Usuario" placeholder="Ingrese su usuario"
+            <form id="registerForm" method="POST">
+                {% csrf_token %}
+                <label for="username" data-i18n="Usuario">Usuario</label>
+                <input type="email" id="registerUsername" name="username" placeholder="Ingrese su usuario"
                     data-i18n-placeholder="CampoUsuario" required>
 
-                <label for="registerPassword" data-i18n="Contraseña">Contraseña</label>
-                <input type="password" id="registerPassword" name="contraseña" placeholder="Ingrese su contraseña"
+                <label for="password" data-i18n="Contraseña">Contraseña</label>
+                <input type="password" id="registerPassword" name="password" placeholder="Ingrese su contraseña"
                     data-i18n-placeholder="CampoContraseña" required>
 
                 <button type="submit" data-i18n="Registrarse">Registrarse</button>

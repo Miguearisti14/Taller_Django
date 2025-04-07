@@ -23,6 +23,8 @@ urlpatterns = [
     path('', GoTravel.views.index),
     path('formulario/', GoTravel.views.formulario),
     path('login/', GoTravel.views.login),
-    path('signin/', GoTravel.views.signin),
+    path('signin/', GoTravel.views.registrar_usuario),
     path('destinos/', GoTravel.views.destinos),
+    path('agregar/', GoTravel.views.create_dest),
+    
 ]

@@ -826,3 +826,18 @@ button:hover {
 .destino-form-container .cancel-btn:hover {
     background: #eda8af;
 }
+
+.add-button {
+    margin-top: 5px;
+    margin-left: 5.5%;
+    padding: 10px;
+    background-color: #d4f1ee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.add-button:hover {
+    background-color: #b3e6e0;
+}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="destino-form-container">
+        <h2 data-i18n="AddDest">Agregar Nuevo Destino</h2>
+        <form id="destino-form" method="post">
+            {% csrf_token %}
+            <label for="destino" data-i18n="Destination">Destino:</label>
+            <input type="text" id="destino" name="destino" placeholder="Ej: París" data-i18n-placeholder="Destination"
+                required>
+
+            <label for="pais" data-i18n="country">País:</label>
+            <input type="text" id="pais" name="pais" placeholder="Ej: Francia" required>
+
+            <label for="continente" data-i18n="continent">Continente:</label>
+            <select id="continente" name="continente" required>
+                <option value="">Seleccionar...</option>
+                <option value="África">África</option>
+                <option value="América">América</option>
+                <option value="Asia">Asia</option>
+                <option value="Europa">Europa</option>
+                <option value="Oceanía">Oceanía</option>
+            </select>
+
+            <label for="idioma" data-i18n="language">Idioma:</label>
+            <input type="text" id="idioma" name="idioma" placeholder="Ej: Francés" required>
+
+            <label for="moneda" data-i18n="currency">Moneda:</label>
+            <input type="text" id="moneda" name="moneda" placeholder="Ej: Euro (€)" required>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn" data-i18n="Add">Agregar</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='destinos.html'"
+                    data-i18n="Cancel">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
