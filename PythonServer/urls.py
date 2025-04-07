@@ -24,4 +24,5 @@ urlpatterns = [
     path('formulario/', GoTravel.views.formulario),
     path('login/', GoTravel.views.login),
     path('signin/', GoTravel.views.signin),
+    path('destinos/', GoTravel.views.destinos),
 ]

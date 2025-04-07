@@ -7,3 +7,13 @@ class Usuarios(models.Model):
 
     class Meta:
         db_table = "usuarios"
+
+class Destinos(models.Model):
+    destino = models.CharField(max_length=100)
+    pais = models.CharField(max_length=100)
+    continente = models.CharField(max_length=50)
+    idioma = models.CharField(max_length=100)
+    moneda = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = "Destinos"

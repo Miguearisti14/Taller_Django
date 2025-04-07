@@ -238,6 +238,7 @@ footer {
     color: #333;
     font-size: 14px;
     font-family: "Ubuntu", serif;
+    margin-top: 30px;
 
 }
 
@@ -561,6 +562,7 @@ button:hover {
 }
 
 /* DESTINOS */
+/* CONTENEDOR DE DESTINOS */
 .container-destinos {
     font-family: "Ubuntu", serif;
     max-width: 1200px;
@@ -571,90 +573,168 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* TÍTULO */
 .container-destinos h2 {
     font-family: "Ubuntu", serif;
     display: flex;
     justify-content: center;
-    padding: 0;
     align-items: center;
     margin-top: 90px;
 }
 
+/* CUADRÍCULA */
 .grid-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
     padding: 20px;
+    justify-items: center;
+    /* Centra cada tarjeta en la celda */
 }
 
-.list-group-item {
-    width: 250px;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+/* ESTILO DE CADA DESTINO (TARJETA) */
+.grid-container .card {
+    width: 65%;
+
+    border-radius: 20px;
+    background: #ffffff;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 20px;
+    border: 1px solid #d0ecea;
+    position: relative;
     text-align: center;
-    padding: 20px;
-    font-family: "Ubuntu", sans-serif;
+    height: 85%;
 }
 
-.list-group-item:hover {
+.grid-container .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-.list-group-item h5 {
-    font-size: 1.4em;
-    font-weight: bold;
+/* ESTILOS PARA LOS TEXTOS */
+.grid-container .card h5 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    margin-top: 2px;
+}
+
+.grid-container .card p {
+    font-size: 0.95em;
     color: #333;
-    margin: 10px 0;
+    margin: 6px 0;
 }
 
-.list-group-item p {
-    font-size: 1em;
-    color: #666;
-    margin-bottom: 5px;
+.grid-container .card strong {
+    color: #111;
 }
+
+/* BOTÓN DE ELIMINAR */
+.delete-btn {
+    background-color: #dff6f3;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.9em;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #b8e5e0;
+}
+
 
 /* BARRA DE BUSQUEDA */
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
     width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
+    height: 80%;
 }
 
-.search-container .search-bar {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-    padding-right: 40px;
-}
-
-.search-container .search-bar:focus {
-    border-color: #999;
-    outline: none;
-}
-
-.search-container .add-button {
-    margin-top: 5px;
-    margin-left: 5px;
-    padding: 10px;
-    background-color: #d4f1ee;
+.search-bar {
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+    outline: none;
+    padding: 10px;
+    font-size: 1em;
+    font-family: "Ubuntu", sans-serif;
+    width: 100%;
+    border-radius: 25px;
 }
 
-.search-container .add-button:hover {
-    background-color: #b3e6e0;
+.search-icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-left: 10px;
+    color: #333;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 0px;
+
+}
+
+.search-icon-btn:hover {
+    color: #e3f7f5;
+
+}
+
+/* PAGINACIÓN DESTINOS */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Ubuntu", serif;
+    font-size: 14px;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 5px;
+    background: #e0f7f1;
+    color: #333;
+    text-decoration: none;
+
+    transition: background 0.3s;
+}
+
+.pagination a:hover {
+    background: #c0e9df;
+}
+
+.pagina-activa {
+    background: #49c5b6;
+    color: white;
 }
 
 /* FORMULARIO AGREGAR */

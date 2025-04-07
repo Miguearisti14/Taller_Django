@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="container-destinos">
+        <h2 class="destinosT" data-i18n="Touristics">Destinos Turísticos</h2>
+
+        <div class="search-container">
+            <form id="searchForm" class="search-box" method="GET" action="/destinos/">
+                <input type="text" id="searchInput" name="q" placeholder="Buscar destino..." class="search-bar" value="{{ request.GET.q }}">
+                <button type="submit" id="searchButton" class="search-icon-btn">🔍</button>
+            </form>
+        </div>
+
+        <div id="destinos-container" class="grid-container">
+            {% for destino in destinos %}
+            <div class="card mb-3">
+                <h5 class="mb-1 text-capitalize">{{ destino.destino }}</h5>
+                <p class="mb-1 text-capitalize"><strong>País:</strong> {{ destino.pais }}</p>
+                <p class="mb-1 text-capitalize"><strong>Continente:</strong> {{ destino.continente }}</p>
+                <p class="mb-1 text-capitalize"><strong>Idioma:</strong> {{ destino.idioma }}</p>
+                <p class="mb-1 text-capitalize"><strong>Moneda:</strong> {{ destino.moneda }}</p>
+                <button class="delete-btn" data-id="{{ destino.id }}">🗑 Eliminar</button>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination">
+        {% if destinos.has_previous %}
+            <a href="?q={{ query }}&page={{ destinos.previous_page_number }}">&laquo; Anterior</a>
+        {% endif %}
+    
+        {% for num in destinos.paginator.page_range %}
+            {% if destinos.number == num %}
+                <span class="pagina-activa">{{ num }}</span>
+            {% else %}
+                <a href="?q={{ query }}&page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+    
+        {% if destinos.has_next %}
+            <a href="?q={{ query }}&page={{ destinos.next_page_number }}">Siguiente &raquo;</a>
+        {% endif %}
+    </div>
+    
+
+{% endblock content %}
