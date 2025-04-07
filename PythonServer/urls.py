@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', GoTravel.views.index),
     path('formulario/', GoTravel.views.formulario),
-    path('login/', GoTravel.views.login),
+    path('login/', GoTravel.views.iniciar_sesion),
     path('signin/', GoTravel.views.registrar_usuario),
     path('destinos/', GoTravel.views.destinos),
     path('agregar/', GoTravel.views.create_dest),

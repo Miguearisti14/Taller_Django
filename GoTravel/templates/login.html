@@ -5,13 +5,14 @@
     <div class="container-login">
         <div class="form-login">
             <h1 data-i18n="IniciarSesion">Iniciar Sesión</h1>
-            <form id="formulario_login">
-                <label for="correo" data-i18n="Usuario">Usuario</label>
-                <input type="text" id="loginUsername" name="nombre" placeholder="Ingrese su usuario"
+            <form id="formulario_login" method="POST">
+                {% csrf_token %}
+                <label for="username" data-i18n="Usuario">Usuario</label>
+                <input type="email" id="loginUsername" name="username" placeholder="Ingrese su usuario"
                     data-i18n-placeholder="CampoUsuario" required>
 
-                <label for="contraseña" data-i18n="Contraseña">Contraseña</label>
-                <input type="password" id="loginPassword" name="contraseña" placeholder="Ingrese su contraseña"
+                <label for="password" data-i18n="Contraseña">Contraseña</label>
+                <input type="password" id="loginPassword" name="password" placeholder="Ingrese su contraseña"
                     data-i18n-placeholder="CampoContraseña" required>
 
                 <button type="submit" data-i18n="IniciarSesion">Iniciar Sesión</button>

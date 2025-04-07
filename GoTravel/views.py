@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
 
 
 # Create your views here.
@@ -13,15 +15,7 @@ def index(request):
 def formulario(request):
     return render(request, 'formulario.html')
 
-def login(request):
-    return render(request, 'login.html', {
-        'mostrar_signin': True
-    })
 
-def signin(request):
-    return render(request, 'signin.html', {
-        'mostrar_sigin': True
-    })
 
 def destinos(request):
     query = request.GET.get('q', '')
@@ -68,17 +62,42 @@ def registrar_usuario(request):
     })
 
     if request.method == 'POST':
-        email = request.POST['username']
+        username = request.POST['username']
         password = request.POST['password']
 
-        if User.objects.filter(username=email).exists():
+        if User.objects.filter(username=username).exists():
             messages.error(request, 'Ese usuario ya existe.')
         else:
-            User.objects.create_user(username=email, password=password)
+            User.objects.create_user(username=username, password=password)
             messages.success(request, 'Usuario registrado correctamente.')
             return redirect('/login/')
         
 
     return render(request, 'signin.html', {
         'mostrar_sigin': True
+    })
+
+
+def iniciar_sesion(request):
+    if request.method == 'GET':
+        return render(request, 'login.html', {
+        'mostrar_signin': True
+    })
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Inicio de sesión exitoso.')
+            
+            return redirect('/')
+        else:
+            messages.error(request, 'Usuario o contraseña incorrectos.')
+
+    return render(request, 'login.html', {
+        'mostrar_signin': True
     })
