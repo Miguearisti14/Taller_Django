@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 
 
@@ -101,3 +101,8 @@ def iniciar_sesion(request):
     return render(request, 'login.html', {
         'mostrar_signin': True
     })
+
+def cerrar_sesion(request):
+    logout(request)
+    messages.success(request, 'Has cerrado sesión correctamente.')
+    return redirect('/')
