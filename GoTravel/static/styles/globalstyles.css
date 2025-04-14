@@ -651,7 +651,7 @@ button:hover {
 }
 
 
-/* BARRA DE BUSQUEDA */
+/* BARRA DE BÚSQUEDA */
 .search-container {
     display: flex;
     justify-content: center;
@@ -662,6 +662,8 @@ button:hover {
 
 .search-box {
     display: flex;
+    flex-direction: row;
+    /* Aseguramos que los elementos se alineen horizontalmente */
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 25px;
@@ -670,7 +672,8 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     width: 100%;
-    height: 80%;
+    /* Aseguramos que el contenedor no sea demasiado pequeño */
+    min-width: 250px;
 }
 
 .search-bar {
@@ -679,8 +682,11 @@ button:hover {
     padding: 10px;
     font-size: 1em;
     font-family: "Ubuntu", sans-serif;
-    width: 100%;
+    flex: 1;
+    /* El input ocupa el espacio disponible */
     border-radius: 25px;
+    min-width: 0;
+    /* Evita que el input se desborde */
 }
 
 .search-icon-btn {
@@ -697,13 +703,11 @@ button:hover {
     justify-content: center;
     border-radius: 50%;
     transition: background-color 0.3s ease, color 0.3s ease;
-    margin-top: 0px;
-
+    margin-top: 0;
 }
 
 .search-icon-btn:hover {
     color: #e3f7f5;
-
 }
 
 /* PAGINACIÓN DESTINOS */
@@ -840,4 +844,75 @@ button:hover {
 
 .add-button:hover {
     background-color: #b3e6e0;
+}
+
+/* Mensajes de alerta */
+
+/* Contenedor de mensajes */
+.messages-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 300px;
+    max-width: 90%;
+}
+
+/* Estilo base de cada mensaje */
+.message {
+    position: relative;
+    padding: 15px 40px 15px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease-in-out;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Variaciones según las etiquetas de mensajes */
+.message.success {
+    background-color: #1f5d9c;
+}
+
+.message.error {
+    background-color: #dc3545;
+}
+
+/* Botón de cerrar */
+.close-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.8;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .messages-container {
+        top: 10px;
+        right: 10px;
+        width: 250px;
+    }
 }

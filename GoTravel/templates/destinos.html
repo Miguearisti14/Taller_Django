@@ -17,13 +17,14 @@
 
         <div id="destinos-container" class="grid-container">
             {% for destino in destinos %}
-            <div class="card mb-3">
+            <div class="card mb-3" id="dest-item-{{ destino.id }}">
                 <h5 class="mb-1 text-capitalize">{{ destino.destino }}</h5>
                 <p class="mb-1 text-capitalize"><strong>País:</strong> {{ destino.pais }}</p>
                 <p class="mb-1 text-capitalize"><strong>Continente:</strong> {{ destino.continente }}</p>
                 <p class="mb-1 text-capitalize"><strong>Idioma:</strong> {{ destino.idioma }}</p>
                 <p class="mb-1 text-capitalize"><strong>Moneda:</strong> {{ destino.moneda }}</p>
-                <button class="delete-btn" data-id="{{ destino.id }}">🗑 Eliminar</button>
+                <button class="delete-btn" onclick="deleteDest({{destino.id}})">🗑 Eliminar </button>
+                <button class="delete-btn" onclick="location.href='/edit_dest/{{destino.id}}/'">🖊️ Editar </button>
             </div>
             {% endfor %}
 
@@ -50,4 +51,40 @@
     </div>
     
 
-{% endblock content %}
+
+
+<script>
+    function deleteDest(destino_id) {
+      if (confirm("¿Estás seguro de que deseas eliminar este libro?")) {
+        fetch(`/delete_dest/${destino_id}/`, {
+          method: "DELETE",
+          headers: {
+            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]")
+              .value,
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "success") {
+              // Eliminar el elemento del DOM
+              const cardContainer = document.getElementById(
+                `dest-item-${destino_id}`
+              );
+              if (cardContainer) {
+                cardContainer.remove();
+              }
+              // Mostrar mensaje de éxito
+              alert(data.message);
+            } else {
+              alert(data.message);
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error al eliminar el libro");
+          });
+      }
+    }
+  </script>
+
+  {% endblock content %}

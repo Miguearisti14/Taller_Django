@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="destino-form-container">
+    <h2 data-i18n="EditDest">Editar Destino</h2>
+    <form id="destino-form" method="post">
+        {% csrf_token %}
+
+        <label for="destino" data-i18n="Destination">Destino:</label>
+        <input type="text" id="destino" name="destino" value="{{ destino.destino }}" required
+               placeholder="Ej: París" data-i18n-placeholder="Destination">
+
+        <label for="pais" data-i18n="country">País:</label>
+        <input type="text" id="pais" name="pais" value="{{ destino.pais }}" required
+               placeholder="Ej: Francia">
+
+        <label for="continente" data-i18n="continent">Continente:</label>
+        <select id="continente" name="continente" required>
+            <option value="">Seleccionar...</option>
+            <option value="África" {% if destino.continente == "África" %}selected{% endif %}>África</option>
+            <option value="América" {% if destino.continente == "América" %}selected{% endif %}>América</option>
+            <option value="Asia" {% if destino.continente == "Asia" %}selected{% endif %}>Asia</option>
+            <option value="Europa" {% if destino.continente == "Europa" %}selected{% endif %}>Europa</option>
+            <option value="Oceanía" {% if destino.continente == "Oceanía" %}selected{% endif %}>Oceanía</option>
+        </select>
+
+        <label for="idioma" data-i18n="language">Idioma:</label>
+        <input type="text" id="idioma" name="idioma" value="{{ destino.idioma }}" required
+               placeholder="Ej: Francés">
+
+        <label for="moneda" data-i18n="currency">Moneda:</label>
+        <input type="text" id="moneda" name="moneda" value="{{ destino.moneda }}" required
+               placeholder="Ej: Euro (€)">
+
+        <div class="button-group">
+            <button type="submit" class="submit-btn" data-i18n="Save">Guardar</button>
+            <button type="button" class="cancel-btn" onclick="location.href='/destinos/'"
+                    data-i18n="Cancel">Cancelar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

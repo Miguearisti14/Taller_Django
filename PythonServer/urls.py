@@ -26,5 +26,7 @@ urlpatterns = [
     path('signin/', GoTravel.views.registrar_usuario),
     path('destinos/', GoTravel.views.destinos),
     path('agregar/', GoTravel.views.create_dest),
-    path('logout/', GoTravel.views.cerrar_sesion)    
+    path('delete_dest/<int:destino_id>/', GoTravel.views.delete_dest),
+    path('logout/', GoTravel.views.cerrar_sesion),
+    path('edit_dest/<int:destino_id>/', GoTravel.views.edit_dest)
 ]
