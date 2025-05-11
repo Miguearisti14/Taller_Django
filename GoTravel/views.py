@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Destinos
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.http import require_http_methods
+from django.core.exceptions import ValidationError
+import os
 
 
 def index(request):
@@ -36,25 +38,52 @@ def create_dest(request):
         return render(request, 'agregar.html')
 
     if request.method == 'POST':
-        destino = request.POST.get('destino')
-        pais = request.POST.get('pais')
-        continente = request.POST.get('continente')
-        idioma = request.POST.get('idioma')
-        moneda = request.POST.get('moneda')
-        
-        destinos = Destinos(
-            destino=destino,
-            pais=pais,
-            continente=continente,
-            idioma=idioma,
-            moneda=moneda
-        )
-        destinos.save()
-    
-        messages.success(request, 'Destino agregado exitosamente')
-        return redirect('/destinos/')
-    
-    return HttpResponse("Metodo no permitido",status=405)
+        print(f"POST recibido para crear nuevo destino")  # Depuración 1
+        try:
+            # Obtener y limpiar datos del formulario
+            destino = request.POST.get('destino').strip()
+            pais = request.POST.get('pais').strip()
+            continente = request.POST.get('continente').strip()
+            idioma = request.POST.get('idioma').strip()
+            moneda = request.POST.get('moneda').strip()
+
+            imagen = request.FILES.get('imagen')
+            if imagen:
+                content_type = imagen.content_type
+                if not content_type.startswith('image/'):
+                    raise ValidationError("El archivo subido no es una imagen válida.")
+
+                ext = os.path.splitext(imagen.name)[1].lower()
+                allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tiff', '.heic', '.heif'}
+                if ext not in allowed_extensions:
+                    raise ValidationError(f"Extensión no permitida: {ext}. Usa: {', '.join(allowed_extensions)}")
+
+                # Generar nombre de archivo seguro
+                filename = f"{destino.lower().replace(' ', '_')}{ext}"
+                imagen = imagen 
+            else:
+                imagen = None 
+
+            # Crear el nuevo destino
+            destinos = Destinos(
+                destino=destino,
+                pais=pais,
+                continente=continente,
+                idioma=idioma,
+                moneda=moneda,
+                imagen=imagen
+            )
+            destinos.save()
+
+            messages.success(request, 'Destino agregado exitosamente')
+            return redirect('/destinos/')
+
+        except ValidationError as e:
+            messages.error(request, f"Error: {str(e)}")
+        except Exception as e:
+            messages.error(request, f"Error al crear el destino: {str(e)}")
+
+    return HttpResponse("Método no permitido", status=405)
 
 # Eliminar destinos
 @login_required
@@ -63,29 +92,57 @@ def delete_dest(request, destino_id):
     try:
         destino = Destinos.objects.get(id=destino_id)
         destino.delete()
-        return JsonResponse({'status': 'success', 'message': 'Libro eliminado exitosamente'})
+        return JsonResponse({'status': 'success', 'message': 'Destino eliminado exitosamente'})
     except Destinos.DoesNotExist:
-        return JsonResponse({'status': 'error', 'message': 'El libro no existe'}, status=404)
+        return JsonResponse({'status': 'error', 'message': 'El destino no existe'}, status=404)
     except Exception as e:
-        return JsonResponse({'status': 'error', 'message': f'Error al eliminar el libro: {str(e)}'}, status=500)
+        return JsonResponse({'status': 'error', 'message': f'Error al eliminar el destino: {str(e)}'}, status=500)
 
 # Editar destinos
 @login_required
 def edit_dest(request, destino_id):
-    destino = Destinos.objects.get(id=destino_id)
+    destino = get_object_or_404(Destinos, id=destino_id)
 
     if request.method == 'POST':
-        destino.destino = request.POST.get('destino')
-        destino.pais = request.POST.get('pais')
-        destino.continente = request.POST.get('continente')
-        destino.idioma = request.POST.get('idioma')
-        destino.moneda = request.POST.get('moneda')
-        destino.save()
-        messages.success(request, 'Destino actualizado correctamente.')
-        return redirect('/destinos/')
+        try:
+            # Actualizar campos de texto
+            destino.destino = request.POST.get('destino').strip()
+            destino.pais = request.POST.get('pais').strip()
+            destino.continente = request.POST.get('continente').strip()
+            destino.idioma = request.POST.get('idioma').strip()
+            destino.moneda = request.POST.get('moneda').strip()
 
-    if request.method == 'GET':
-        return render(request, 'editar.html', {'destino': destino})
+            # Manejar la imagen
+            if 'imagen' in request.FILES:
+                imagen = request.FILES['imagen']
+                # Validar que el archivo es una imagen
+                content_type = imagen.content_type
+                if not content_type.startswith('image/'):
+                    raise ValidationError("El archivo subido no es una imagen válida.")
+
+                # Validar la extensión del archivo
+                ext = os.path.splitext(imagen.name)[1].lower()
+                allowed_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.tiff', '.heic', '.heif'}
+                if ext not in allowed_extensions:
+                    raise ValidationError(f"Extensión no permitida: {ext}. Usa: {', '.join(allowed_extensions)}")
+
+                # Generar un nombre de archivo seguro
+                filename = f"{destino.destino.lower().replace(' ', '_')}{ext}"
+                destino.imagen.delete(save=False)  # Eliminar la imagen anterior, si existe
+                destino.imagen.save(filename, imagen, save=True)
+                print(f"Imagen guardada en: {destino.imagen.path}")  # Agrega esta línea para depuración
+
+            # Guardar los cambios
+            destino.save()
+            messages.success(request, 'Destino actualizado correctamente.')
+            return redirect('/destinos/')
+
+        except ValidationError as e:
+            messages.error(request, f"Error: {str(e)}")
+        except Exception as e:
+            messages.error(request, f"Error al actualizar el destino: {str(e)}")
+
+    return render(request, 'editar.html', {'destino': destino})
 
 # Registrar nuevo usuario
 def registrar_usuario(request):

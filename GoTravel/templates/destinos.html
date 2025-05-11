@@ -4,6 +4,7 @@
     <div class="container-destinos">
         <h2 class="destinosT" data-i18n="Touristics">Destinos Turísticos</h2>
 
+        <!-- Barra de busqueda -->
         <div class="search-container">
             <form id="searchForm" class="search-box" method="GET" action="/destinos/">
                 <input type="text" id="searchInput" name="q" placeholder="Buscar destino..." class="search-bar" value="{{ request.GET.q }}">
@@ -11,6 +12,7 @@
             </form>
         </div>
 
+        <!-- Añadir destino -->
         <button class="add-button" onclick="location.href='/agregar/'">
             <i>Agregar Destino</i>
         </button>
@@ -19,6 +21,9 @@
             {% for destino in destinos %}
             <div class="card mb-3" id="dest-item-{{ destino.id }}">
                 <h5 class="mb-1 text-capitalize">{{ destino.destino }}</h5>
+                {% if destino.imagen %}
+                <img src="{{ destino.imagen.url }}" alt="{{ destino.destino }}" class="card-img-top">
+                {% endif %}
                 <p class="mb-1 text-capitalize"><strong>País:</strong> {{ destino.pais }}</p>
                 <p class="mb-1 text-capitalize"><strong>Continente:</strong> {{ destino.continente }}</p>
                 <p class="mb-1 text-capitalize"><strong>Idioma:</strong> {{ destino.idioma }}</p>
@@ -55,7 +60,7 @@
 
 <script>
     function deleteDest(destino_id) {
-      if (confirm("¿Estás seguro de que deseas eliminar este libro?")) {
+      if (confirm("¿Estás seguro de que deseas eliminar este destino?")) {
         fetch(`/delete_dest/${destino_id}/`, {
           method: "DELETE",
           headers: {
@@ -81,7 +86,7 @@
           })
           .catch((error) => {
             console.error("Error:", error);
-            alert("Error al eliminar el libro");
+            alert("Error al eliminar destino");
           });
       }
     }

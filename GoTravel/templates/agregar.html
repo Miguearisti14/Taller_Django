@@ -3,7 +3,7 @@
 
     <div class="destino-form-container">
         <h2 data-i18n="AddDest">Agregar Nuevo Destino</h2>
-        <form id="destino-form" method="post">
+        <form id="destino-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="destino" data-i18n="Destination">Destino:</label>
             <input type="text" id="destino" name="destino" placeholder="Ej: París" data-i18n-placeholder="Destination"
@@ -27,6 +27,9 @@
 
             <label for="moneda" data-i18n="currency">Moneda:</label>
             <input type="text" id="moneda" name="moneda" placeholder="Ej: Euro (€)" required>
+
+            <label for="imagen" data-i18n="currency">Imagen del destino:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
 
             <div class="button-group">
                 <button type="submit" class="submit-btn" data-i18n="Add">Agregar</button>

@@ -14,6 +14,12 @@ class Destinos(models.Model):
     continente = models.CharField(max_length=50)
     idioma = models.CharField(max_length=100)
     moneda = models.CharField(max_length=100)
+    imagen = models.ImageField(
+        upload_to='destinos/',    # Carpeta dentro de MEDIA_ROOT
+        null=True,
+        blank=True
+    )
 
     class Meta:
         db_table = "Destinos"
+    

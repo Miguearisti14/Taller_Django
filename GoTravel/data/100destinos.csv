@@ -1,101 +1,101 @@
-﻿destino,pais,continente,idioma,moneda
-Roma,Italia,Europa,Italiano,Euro
-Budapest,Hungría,Europa,Húngaro,Forinto húngaro
-Barcelona,España,Europa,Español,Euro
-Madrid,España,Europa,Español,Euro
-Florencia,Italia,Europa,Italiano,Euro
-Lisboa,Portugal,Europa,Portugués,Euro
-Praga,República Checa,Europa,Checo,Corona checa
-Ámsterdam,Países Bajos,Europa,Neerlandés,Euro
-Londres,Reino Unido,Europa,Inglés,Libra esterlina
-Oporto,Portugal,Europa,Portugués,Euro
-París,Francia,Europa,Francés,Euro
-Viena,Austria,Europa,Alemán,Euro
-Berlín,Alemania,Europa,Alemán,Euro
-Venecia,Italia,Europa,Italiano,Euro
-Sevilla,España,Europa,Español,Euro
-Toledo,España,Europa,Español,Euro
-Estambul,Turquía,Asia/Europa,Turco,Lira turca
-Bruselas,Bélgica,Europa,Neerlandés,Euro
-Edimburgo,Reino Unido,Europa,Inglés,Libra esterlina
-Brujas,Bélgica,Europa,Neerlandés,Euro
-Valencia,España,Europa,Español,Euro
-Cracovia,Polonia,Europa,Polaco,Zloty
-Dubrovnik,Croacia,Europa,Croata,Euro
-Medellín,Colombia,América,Español,Peso colombiano
-Milán,Italia,Europa,Italiano,Euro
-Split,Croacia,Europa,Croata,Euro
-Granada,España,Europa,Español,Euro
-Copenhague,Dinamarca,Europa,Danés,Corona danesa
-Dublín,Irlanda,Europa,Irlandés,Euro
-Bilbao,España,Europa,Español,Euro
-Cartagena de Indias,Colombia,América,Español,Peso colombiano
-Santiago de Compostela,España,Europa,Español,Euro
-Málaga,España,Europa,Español,Euro
-Múnich,Alemania,Europa,Alemán,Euro
-Córdoba,España,Europa,Español,Euro
-Ciudad de México,México,América,Español,Peso mexicano
-Nápoles,Italia,Europa,Italiano,Euro
-Marrakech,Marruecos,África,Árabe,Dírham marroquí
-Estocolmo,Suecia,Europa,Sueco,Corona sueca
-Gante,Bélgica,Europa,Neerlandés,Euro
-Bratislava,Eslovaquia,Europa,Eslovaco,Euro
-Hanói,Vietnam,Asia,Vietnamita,Dong
-Zaragoza,España,Europa,Español,Euro
-Santiago,Chile,América,Español,Peso chileno
-Bucarest,Rumanía,Europa,Rumano,Leu rumano
-Donostia-San Sebastián,España,Europa,Español,Euro
-Burdeos,Francia,Europa,Francés,Euro
-Bogotá,Colombia,América,Español,Peso colombiano
-Cádiz,España,Europa,Español,Euro
-Salamanca,España,Europa,Español,Euro
-Estrasburgo,Francia,Europa,Francés,Euro
-Palma de Mallorca,España,Europa,Español,Euro
-Nueva York,Estados Unidos,América,Inglés,Dólar estadounidense
-Segovia,España,Europa,Español,Euro
-Varsovia,Polonia,Europa,Polaco,Zloty
-Zagreb,Croacia,Europa,Croata,Euro
-Helsinki,Finlandia,Europa,Finés,Euro
-Cáceres,España,Europa,Español,Euro
-Tirana,Albania,Europa,Albanés,Lek
-Buenos Aires,Argentina,América,Español,Peso argentino
-Antigua Guatemala,Guatemala,América,Español,Quetzal
-La Valeta,Malta,Europa,Maltés,Euro
-Lima,Perú,América,Español,Sol
-Liubliana,Eslovenia,Europa,Esloveno,Euro
-Fez,Marruecos,África,Árabe,Dírham marroquí
-Cusco,Perú,América,Español,Sol
-Toulouse,Francia,Europa,Francés,Euro
-Oviedo,España,Europa,Español,Euro
-Sarajevo,Bosnia y Herzegovina,Europa,Bosnio,Marco convertible
-Girona,España,Europa,Español,Euro
-La Habana,Cuba,América,Español,Peso cubano
-Amberes,Bélgica,Europa,Neerlandés,Euro
-La Coruña,España,Europa,Español,Euro
-Riga,Letonia,Europa,Letón,Euro
-Zúrich,Suiza,Europa,Alemán,Franco suizo
-Oaxaca,México,América,Español,Peso mexicano
-Bolonia,Italia,Europa,Italiano,Euro
-Núremberg,Alemania,Europa,Alemán,Euro
-León,España,Europa,Español,Euro
-Niza,Francia,Europa,Francés,Euro
-Marsella,Francia,Europa,Francés,Euro
-Sintra,Portugal,Europa,Portugués,Euro
-Alicante,España,Europa,Español,Euro
-Belfast,Irlanda del Norte,Europa,Inglés,Libra esterlina
-Cuenca,España,Europa,Español,Euro
-Bangkok,Tailandia,Asia,Tailandés,Baht
-Tarragona,España,Europa,Español,Euro
-Zadar,Croacia,Europa,Croata,Kuna
-Gijón,España,Europa,Español,Euro
-Mérida,México,América,Español,Peso mexicano
-Úbeda,España,Europa,Español,Euro
-Lyon,Francia,Europa,Francés,Euro
-Breslavia,Polonia,Europa,Polaco,Złoty
-Liverpool,Reino Unido,Europa,Inglés,Libra esterlina
-Ciudad de Panamá,Panamá,América,Español,Dólar estadounidense
-Beijing,China,Asia,Chino mandarín,Yuan
-Colonia,Alemania,Europa,Alemán,Euro
-Saigón,Vietnam,Asia,Vietnamita,Đồng
-El Cairo,Egipto,África,Árabe,Libra egipcia
-Rio de Janeiro,Brasil,América,Portugués,Real brasileño
+﻿Destino,País,Continente,Idioma,Moneda,image_url;;;
+Roma,Italia,Europa,Italiano,Euro,https://media.istockphoto.com/id/539115110/es/foto/colosseum-in-rome-italy-y-sol-de-la-ma%C3%B1ana.jpg?s=612x612&w=0&k=20&c=S2BE7bvASd4hm6Yp0VbtvaGnnqTR4p5HJ-6RfDjR-MQ=;;;
+Budapest,Hungría,Europa,Húngaro,Forinto húngaro,https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Budapest_parliament_42447015_9d06c74869_o.jpg/640px-Budapest_parliament_42447015_9d06c74869_o.jpg;;;
+Barcelona,España,Europa,Español,Euro,https://imagenes.20minutos.es/files/image_640_480/files/fp/uploads/imagenes/2023/04/05/la-sagrada-familia-barcelona.r_d.627-418.jpeg;;;
+Madrid,España,Europa,Español,Euro,https://hips.hearstapps.com/hmg-prod/images/madrid-03-1537270899.jpg?resize=640:*;;;
+Florencia,Italia,Europa,Italiano,Euro,https://phantom-expansion.unidadeditorial.es/8c3d2909fb402f9695891e09bc32ffaa/crop/0x0/1279x852/resize/640/assets/multimedia/imagenes/2024/05/08/17151752290153.jpg;;;
+Lisboa,Portugal,Europa,Portugués,Euro,https://live.staticflickr.com/65535/50581350667_db45769f46_z.jpg;;;
+Praga,República Checa,Europa,Checo,Corona checa,https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Prague_from_Klementinum.jpg/640px-Prague_from_Klementinum.jpg;;;
+Ámsterdam,Países Bajos,Europa,Neerlandés,Euro,https://cdn.pixabay.com/photo/2017/01/13/11/49/amsterdam-1977004_640.jpg;;;
+Londres,Reino Unido,Europa,Inglés,Libra esterlina,https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Ojo_de_Londres%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_203.JPG/640px-Ojo_de_Londres%2C_Londres%2C_Inglaterra%2C_2014-08-11%2C_DD_203.JPG;;;
+Oporto,Portugal,Europa,Portugués,Euro,https://lavidanoessolotrabajar.com/wp-content/uploads/2020/06/Exmo-Hotel-1.jpg;;;
+París,Francia,Europa,Francés,Euro,https://live.staticflickr.com/4246/34206747143_c8d94da899_z.jpg;;;
+Viena,Austria,Europa,Alemán,Euro,https://retalesdelmundo.com/wp-content/uploads/2014/03/DSC00720.jpg;;;
+Berlín,Alemania,Europa,Alemán,Euro,https://img.veenaworld.com/wp-content/uploads/2023/05/10-Things-to-Do-in-Berlin.jpg?imwidth=640;;;
+Venecia,Italia,Europa,Italiano,Euro,https://cdn.pixabay.com/photo/2017/03/08/19/29/venice-2127617_640.jpg;;;
+Sevilla,España,Europa,Español,Euro,https://blog.fuertehoteles.com/wp-content/uploads/2020/04/catedral-sevilla.jpg;;;
+Toledo,España,Europa,Español,Euro,https://phantom-elmundo.unidadeditorial.es/725405c3d67ca2f3693c5f2d6dc08d4e/resize/640/assets/multimedia/imagenes/2021/02/18/16136455382108.jpg;;;
+Estambul,Turquía,Asia/Europa,Turco,Lira turca,https://farm3.staticflickr.com/2082/2499952176_202f1ca779_z.jpg;;;
+Bruselas,Bélgica,Europa,Neerlandés,Euro,https://elmundodegeorge.com/wp-content/uploads/2019/03/sin-tc3adtulo-19-1.jpg?w=640;;;
+Edimburgo,Reino Unido,Europa,Inglés,Libra esterlina,https://live.staticflickr.com/3753/33229057206_63ea47bfc6_z.jpg;;;
+Brujas,Bélgica,Europa,Neerlandés,Euro,https://www.callejeandoporelmundo.com/wp-content/uploads/2013/10/vistas-desde-la-torre-belfort-bruja-belgica-2.jpg;;;
+Valencia,España,Europa,Español,Euro,https://consejosdeespana.com/wp-content/uploads/2015/09/1-8.jpg;;;
+Cracovia,Polonia,Europa,Polaco,Zloty,https://d-art.ppstatic.pl/kadry/k/r/1/51/0b/6711145f997da_o_medium.jpg;;;
+Dubrovnik,Croacia,Europa,Croata,Euro,https://phantom-elmundo.unidadeditorial.es/578301a885734faec4852f6748c9c3f8/resize/640/assets/multimedia/imagenes/2022/10/11/16655038413640.jpg;;;
+Medellín,Colombia,América,Español,Peso colombiano,https://citieslikedreams.com/wp-content/uploads/2014/01/cablecars.jpg?w=640;;;
+Milán,Italia,Europa,Italiano,Euro,https://farm1.staticflickr.com/9/13583927_ffd5617b16_z.jpg;;;
+Split,Croacia,Europa,Croata,Euro,https://lavelociraptor.wordpress.com/wp-content/uploads/2017/05/34432384821_b9291f9334_b.jpg?w=640;;;
+Granada,España,Europa,Español,Euro,https://img.poemhunter.com/i/poem_image/63/58208563_poem_77.jpg;;;
+Copenhague,Dinamarca,Europa,Danés,Corona danesa,https://cdn.pixabay.com/photo/2018/01/24/23/34/city-3105058_640.jpg;;;
+Dublín,Irlanda,Europa,Irlandés,Euro,https://lirp.cdn-website.com/7dce70ca/dms3rep/multi/opt/Screenshot+2022-06-11+at+18.55.37-640w.png;;;
+Bilbao,España,Europa,Español,Euro,https://www.hola.com/horizon/original_aspect_ratio/784eff216ffa-bilbao-a.jpg?im=Resize=(640),type=downsize;;;
+Cartagena de Indias,Colombia,América,Español,Peso colombiano,https://i.pinimg.com/736x/df/41/bd/df41bd3f5db1c6e01c3f26294773e47e.jpg;;;
+Santiago de Compostela,España,Europa,Español,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Santiago_de_Compostela_1992_05.jpg/640px-Santiago_de_Compostela_1992_05.jpg;;;
+Málaga,España,Europa,Español,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/MLG_view.jpg/640px-MLG_view.jpg;;;
+Múnich,Alemania,Europa,Alemán,Euro,https://image.urlaubspiraten.de/640/image/upload/v1616601967/Impressions%20and%20Other%20Assets/marienplatz-night-munich-germany-old-town_ortwl0.webp;;;
+Córdoba,España,Europa,Español,Euro,https://cdn.tripzaza.com/es/destinations/wp-content/uploads/2019/02/22-Plaza_de_la_Corredera.jpg;;;
+Ciudad de México,México,América,Español,Peso mexicano,https://consejosdecancun.com/wp-content/uploads/2021/04/cidade-do-mexico-640x418-1.jpg;;;
+Nápoles,Italia,Europa,Italiano,Euro,https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgy6GIdEaFhNgXe_29agAfxmuq5PG62UOxXXEdFYEHgf-Uv4BaGgVsxVlDTu8pBugt24rFr5I3Pdofc9Z6tCxLoClenlByT47zMT9ErrAXv7o6qhJEyJIEgKZ6B2ApvsV5qXV-nKmclkd_tO4apwKyw6vwaqtvTS5W92ZxF0JRfmB7PFJ0O4idbiSF1/w640-h418/DSCN3893_edited.jpg;;;
+Marrakech,Marruecos,África,Árabe,Dírham marroquí,https://www.globehunters.com/assets/images/blog/05-MarakeshFoodie.jpg;;;
+Estocolmo,Suecia,Europa,Sueco,Corona sueca,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxXFw9pNtJTkkisHmk_PbOQNha3YcwsJCwAQ&s;;;
+Gante,Bélgica,Europa,Neerlandés,Euro,https://c8.staticflickr.com/2/1529/25840225375_289738d9cc_z.jpg;;;
+Bratislava,Eslovaquia,Europa,Eslovaco,Euro,https://www.hola.com/horizon/original_aspect_ratio/0d5f5c637262-bratislava-eslovaquia-danubio-a.jpg?im=Resize=(640),type=downsize;;;
+Hanói,Vietnam,Asia,Vietnamita,Dong,https://i0.wp.com/vicwestmin.wordpress.com/wp-content/uploads/2016/09/hanoi.jpg?ssl=1;;;
+Zaragoza,España,Europa,Español,Euro,https://imagenes.heraldo.es/files/image_640_auto/uploads/imagenes/2021/12/08/crecida-del-ebro-a-su-40170825.jpeg;;;
+Santiago,Chile,América,Español,Peso chileno,https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Teatro_Municipal_de_Stgo_y_Fuente_de_los_ni%C3%B1os_-fRF03.jpg/640px-Teatro_Municipal_de_Stgo_y_Fuente_de_los_ni%C3%B1os_-fRF03.jpg;;;
+Bucarest,Rumanía,Europa,Rumano,Leu rumano,https://s.yimg.com/ny/api/res/1.2/_4TI3hs17y0Wx8F1a5RS3A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQxOA--/https://media.zenfs.com/en/globenewswire.com/c45d76d3f5a912fd106c3674a693dbb8;;;
+Donostia-San Sebastián,España,Europa,Español,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/San_Sebastian_anochecer.jpg/640px-San_Sebastian_anochecer.jpg;;;
+Burdeos,Francia,Europa,Francés,Euro,https://www.turistum.com/wp-content/uploads/2015/05/castillochambord.jpg;;;
+Bogotá,Colombia,América,Español,Peso colombiano,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1vGfWXEvocXI68TJdU-svGLfaEm0bFNQdBA&s;;;
+Cádiz,España,Europa,Español,Euro,https://media.istockphoto.com/id/515375616/es/foto/olvera-vista-panor%C3%A1mica-de-la-ciudad-espa%C3%B1a.jpg?s=612x612&w=0&k=20&c=nxofmLIAaY3OL8gpTGApitCJtpXn7ZIlCuVV43DprZc=;;;
+Salamanca,España,Europa,Español,Euro,https://www.losarribesdelduero.com/wp-content/uploads/2023/09/catedral-de-salamanca.jpg;;;
+Estrasburgo,Francia,Europa,Francés,Euro,https://www.colombie.campusfrance.org/sites/pays/files/colombie/styles/mobile_visuel_principal_page/public/Strasbourg.png?itok=bZ1R975U;;;
+Palma de Mallorca,España,Europa,Español,Euro,https://cdn.yate.co/img/blog/2023/26/palma-de-mallorca-51l.jpg;;;
+Nueva York,Estados Unidos,América,Inglés,Dólar estadounidense,https://image.nuevayork.com/wp-content/uploads/2020/03/New-York-Helicopter-Tour-2.eric_both.bottom_right.jpg.webp;;;
+Segovia,España,Europa,Español,Euro,https://phantom-elmundo.unidadeditorial.es/725405c3d67ca2f3693c5f2d6dc08d4e/resize/640/assets/multimedia/imagenes/2021/02/18/16136455382108.jpg;;;
+Varsovia,Polonia,Europa,Polaco,Zloty,https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Biblioteca_Raczynski%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_45.jpg/640px-Biblioteca_Raczynski%2C_Poznan%2C_Polonia%2C_2014-09-18%2C_DD_45.jpg;;;
+Zagreb,Croacia,Europa,Croata,Euro,https://experienciasviajeras.blog/wp-content/uploads/2019/09/El-precioso-pueblo-marinero-medieval-de-Rovinj.jpg;;;
+Helsinki,Finlandia,Europa,Finés,Euro,https://cdn.pixabay.com/photo/2020/04/09/19/45/finland-5022869_640.jpg;;;
+Cáceres,España,Europa,Español,Euro,https://imagenes.20minutos.es/files/image_640_auto/uploads/imagenes/2021/12/14/fotografia-de-plasencia-extremadura.jpeg;;;
+Tirana,Albania,Europa,Albanés,Lek,https://media.tacdn.com/media/attractions-splice-spp-674x446/12/6e/30/40.jpg;;;
+Buenos Aires,Argentina,América,Español,Peso argentino,https://img.buzzfeed.com/buzzfeed-static/static/2016-11/6/15/asset/buzzfeed-prod-web14/sub-buzz-17252-1478464611-1.jpg;;;
+Antigua Guatemala,Guatemala,América,Español,Quetzal,https://i0.wp.com/holycrapadventures.com/wp-content/uploads/P2263021-01.jpeg?resize=640%2C418&ssl=1;;;
+La Valeta,Malta,Europa,Maltés,Euro,https://www.hola.com/horizon/original_aspect_ratio/159f4f91ce2c-comino-blue-lagoon-01-aerial-view-by-clive-vella-a.jpg?im=Resize=(640),type=downsize;;;
+Lima,Perú,América,Español,Sol,https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Lima_-_Per%C3%BA_%2820096650633%29.jpg/640px-Lima_-_Per%C3%BA_%2820096650633%29.jpg;;;
+Liubliana,Eslovenia,Europa,Esloveno,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Beirutcity.jpg/640px-Beirutcity.jpg;;;
+Fez,Marruecos,África,Árabe,Dírham marroquí,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Fez_%281983%29_01.jpg/640px-Fez_%281983%29_01.jpg;;;
+Cusco,Perú,América,Español,Sol,https://luizcore.wordpress.com/files/2008/07/1_machupicchu.jpg?w=640;;;
+Toulouse,Francia,Europa,Francés,Euro,https://live.staticflickr.com/885/41607472784_b222249097_z.jpg;;;
+Oviedo,España,Europa,Español,Euro,https://www.turismoasturias.es/o/adaptive-media/image/217959/3/f01ced9f-b4f2-e00b-181d-ac7f5977287b?t=1674189059809;;;
+Sarajevo,Bosnia y Herzegovina,Europa,Bosnio,Marco convertible,https://blog.ricksteves.com/cameron/files/2018/10/cameron-poland-torun-03-640x418.jpg;;;
+Girona,España,Europa,Español,Euro,https://www.golfdaro.com/wp-content/uploads/2021/05/Hotel-TorreMirona-2-e1744295740391.jpg;;;
+La Habana,Cuba,América,Español,Peso cubano,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLTYACOJCG4icSl-jwWLW9A1Dvy0lAayMpsA&s;;;
+Amberes,Bélgica,Europa,Neerlandés,Euro,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQEGfJoCd-6sqL6SdjC9M-Cw32o65MCp4vmQ&s;;;
+La Coruña,España,Europa,Español,Euro,https://estaticos-cdn.prensaiberica.es/clip/1d44dede-fbef-4bda-a4d4-0b73b853261b_alta-libre-aspect-ratio_640w_0.jpg;;;
+Riga,Letonia,Europa,Letón,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Vyborg_June2012_View_from_Olaf_Tower_05.jpg/640px-Vyborg_June2012_View_from_Olaf_Tower_05.jpg;;;
+Zúrich,Suiza,Europa,Alemán,Franco suizo,https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Rikon_IMG_2782.JPG/640px-Rikon_IMG_2782.JPG;;;
+Oaxaca,México,América,Español,Peso mexicano,https://i0.wp.com/johnmichaelkeating.com/wp-content/uploads/2018/03/Oaxaca-1400x915.jpg?fit=1200%2C784&ssl=1&w=640;;;
+Bolonia,Italia,Europa,Italiano,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Santiago_de_Compostela_1992_05.jpg/640px-Santiago_de_Compostela_1992_05.jpg;;;
+Núremberg,Alemania,Europa,Alemán,Euro,https://www.theglobeandmail.com/resizer/v2/HEFTR6DE4BB6DAW2P75Y7M7XRU.jpg?auth=f993e4138f1c2516afc078699705753c810d6fa2f351a1437c59f0ac19a1cb46&width=640&quality=80;;;
+León,España,Europa,Español,Euro,https://live.staticflickr.com/65535/52605636192_f35fd19947_z.jpg;;;
+Niza,Francia,Europa,Francés,Euro,https://i0.wp.com/notiespartano.com/wp-content/uploads/2023/05/valle-del-loira-francia.webp?resize=640%2C418&ssl=1;;;
+Marsella,Francia,Europa,Francés,Euro,https://blog.felicesvacaciones.es/pics/2018/06/catedral_marsella_mucem.webp;;;
+Sintra,Portugal,Europa,Portugués,Euro,https://www.hola.com/horizon/original_aspect_ratio/36bc39ec1e4c-shutterstock1782609170-a.jpg?im=Resize=(640),type=downsize;;;
+Alicante,España,Europa,Español,Euro,https://skyticket.jp/guide/wp-content/uploads/iStock-627778522-680x444.jpg?imwidth=400;;;
+Belfast,Irlanda del Norte,Europa,Inglés,Libra esterlina,https://gv-images.viamichelin.com/images/michelin_guide/max/Img_18579.jpg?width=640&format=auto;;;
+Cuenca,España,Europa,Español,Euro,https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQLRYtDAEngEeyRxez2hGFF8qokbKiHTzibr-NO1wbCwZRNB9aW5Z7oh-xo6Jqp1dyDZHtqDBKnITETFOWYX0B86nZxjwcywQauS5NInyFrGl7rAkHDZ2uhvuSl_XBsdADXjUmUJBs4QKY/s640/Cuenca+2.JPG;;;
+Bangkok,Tailandia,Asia,Tailandés,Baht,https://live.staticflickr.com/65535/53587371134_2970eec7a9_z.jpg;;;
+Tarragona,España,Europa,Español,Euro,https://cf.bstatic.com/xdata/images/hotel/max1024x768/190230912.jpg?k=0988e18d97d4b50d5e11c2af5c6237ba123f325576030e3d6ec3536f4eb2ea2b&o=&hp=1;;;
+Zadar,Croacia,Europa,Croata,Kuna,https://experienciasviajeras.blog/wp-content/uploads/2019/09/El-precioso-pueblo-marinero-medieval-de-Rovinj.jpg;;;
+Gijón,España,Europa,Español,Euro,https://www.hola.com/horizon/original_aspect_ratio/a051b6dd06be-plaza-mayor-gijon-asturias-a.jpg?im=Resize=(640),type=downsize;;;
+Mérida,México,América,Español,Peso mexicano,https://www.callejeandoporelmundo.com/wp-content/uploads/2017/09/merida-yucat%C3%A1n-2.jpg;;;
+Úbeda,España,Europa,Español,Euro,https://live.staticflickr.com/65535/50844242347_71d9be0a02_z.jpg;;;
+Lyon,Francia,Europa,Francés,Euro,https://live.staticflickr.com/1837/42214927800_ff25729b3d_z.jpg;;;
+Breslavia,Polonia,Europa,Polaco,Złoty,https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KUTNA_HORA_%28js%29_11.jpg/640px-KUTNA_HORA_%28js%29_11.jpg;;;
+Liverpool,Reino Unido,Europa,Inglés,Libra esterlina,https://ymliverpool.com/wp-content/uploads/2015/04/Old_Walton_Hospital_-_geograph.org_.uk_-_292465-640x418.jpg.pagespeed.ce.82kxbBiCTV.jpg;;;
+Ciudad de Panamá,Panamá,América,Español,Dólar estadounidense,https://keeptravellingagency.wordpress.com/wp-content/uploads/2016/07/02.jpg?w=640;;;
+Beijing,China,Asia,Chino mandarín,Yuan,https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nLzUxZTY4NzAyYjkyMDRiZWRhZDljNTA5MjQwNjRhMjIxIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NDAsImhlaWdodCI6NjQwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJ0b0Zvcm1hdCI6ICJ3ZWJwIn19;;;
+Colonia,Alemania,Europa,Alemán,Euro,https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/K%C3%B6ln_Panorama.jpg/640px-K%C3%B6ln_Panorama.jpg;;;
+Saigón,Vietnam,Asia,Vietnamita,Đồng,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnGpYdtE3bt76tuYkpZxDzF8G-GkudKOO0Ag&s;;;
+El Cairo,Egipto,África,Árabe,Libra egipcia,https://d2kihw5e8drjh5.cloudfront.net/eyJidWNrZXQiOiJ1dGEtaW1hZ2VzIiwia2V5IjoicGxhY2VfaW1nLzZkYWE5ZTY3ZTlhMjQ2MDdhZjMyZTFiZGVlYzE1OWUyIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo2NDAsImhlaWdodCI6NjQwLCJmaXQiOiJpbnNpZGUifSwicm90YXRlIjpudWxsLCJ0b0Zvcm1hdCI6ICJ3ZWJwIn19;;;
+Rio de Janeiro,Brasil,América,Portugués,Real brasileño,https://static.wixstatic.com/media/5c4048_ab42fa95554847b194b7a31994e970fd~mv2.jpg/v1/fill/w_640,h_418,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/5c4048_ab42fa95554847b194b7a31994e970fd~mv2.jpg;;;

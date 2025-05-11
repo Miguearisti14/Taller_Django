@@ -605,7 +605,7 @@ button:hover {
     border: 1px solid #d0ecea;
     position: relative;
     text-align: center;
-    height: 85%;
+    height: 90%;
 }
 
 .grid-container .card:hover {
@@ -893,6 +893,14 @@ button:hover {
 
 .close-btn:hover {
     opacity: 1;
+}
+
+/* Imágenes */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
 }
 
 /* Animación de entrada */
