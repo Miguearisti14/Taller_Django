@@ -903,6 +903,91 @@ button:hover {
     border-radius: 30px;
 }
 
+/* Filtros */
+/* 1. Panel de filtros */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-box {
+    display: flex;
+    flex-direction: row;
+    /* obliga siempre a alinear en fila */
+    justify-content: center;
+    /* centra todo el grupo de filtros */
+    align-items: flex-end;
+    gap: 1.5rem;
+    /* espacio uniforme entre filtros */
+    background: #ffffff;
+    padding: 15px 20px;
+    border: 1px solid #d0ecea;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    width: 60%;
+    flex-wrap: nowrap;
+    /* evita que los elementos bajen de línea */
+}
+
+
+/* 2. Grupo de filtro */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #222;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    border: 1px solid #d0ecea;
+    border-radius: 20px;
+    background: #f9fdfc;
+    font-size: 0.95em;
+    min-width: 120px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-group select:focus {
+    border-color: #a6e3dd;
+}
+
+/* 3. Botón Filtrar */
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #dff6f3;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: #b8e5e0;
+    transform: translateY(-2px);
+}
+
+/* 4. Responsivo: en pantallas muy estrechas apila */
+@media (max-width: 600px) {
+    .filter-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
 /* Animación de entrada */
 @keyframes slideIn {
     from {

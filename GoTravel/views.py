@@ -19,17 +19,47 @@ def formulario(request):
 
 # Mostrar los destinos
 def destinos(request):
-    query = request.GET.get('q', '')
-    if query:
-        destinos_list = Destinos.objects.filter(destino__icontains=query)
-    else:
-        destinos_list = Destinos.objects.all()
+    # Parámetros de búsqueda y filtro
+    query = request.GET.get('q', '').strip()
+    pais_filtro = request.GET.get('pais', '').strip()
+    continente_filtro = request.GET.get('continente', '').strip()
+    idioma_filtro = request.GET.get('idioma', '').strip()
 
+    # Partimos de todos los destinos
+    destinos_list = Destinos.objects.all()
+
+    # Aplicamos búsqueda por nombre
+    if query:
+        destinos_list = destinos_list.filter(destino__icontains=query)
+
+    # Aplicamos filtros si están definidos
+    if pais_filtro:
+        destinos_list = destinos_list.filter(pais=pais_filtro)
+    if continente_filtro:
+        destinos_list = destinos_list.filter(continente=continente_filtro)
+    if idioma_filtro:
+        destinos_list = destinos_list.filter(idioma=idioma_filtro)
+
+    # Paginación (9 por página)
     paginator = Paginator(destinos_list, 9)
     page_number = request.GET.get('page')
-    destinos = paginator.get_page(page_number)
+    destinos_page = paginator.get_page(page_number)
 
-    return render(request, 'destinos.html', {'destinos': destinos, 'query': query})
+    # Generamos las listas únicas para los selects
+    paises = Destinos.objects.values_list('pais', flat=True).distinct().order_by('pais')
+    continentes = Destinos.objects.values_list('continente', flat=True).distinct().order_by('continente')
+    idiomas = Destinos.objects.values_list('idioma', flat=True).distinct().order_by('idioma')
+
+    return render(request, 'destinos.html', {
+        'destinos': destinos_page,
+        'query': query,
+        'paises': paises,
+        'continentes': continentes,
+        'idiomas': idiomas,
+        'pais_filtro': pais_filtro,
+        'continente_filtro': continente_filtro,
+        'idioma_filtro': idioma_filtro,
+    })
 
 # Crear destinos
 @login_required

@@ -1,95 +1,192 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <div class="container-destinos">
-        <h2 class="destinosT" data-i18n="Touristics">Destinos Turísticos</h2>
+<div class="container-destinos">
+    <h2 class="destinosT" data-i18n="Touristics">Destinos Turísticos</h2>
 
-        <!-- Barra de busqueda -->
-        <div class="search-container">
-            <form id="searchForm" class="search-box" method="GET" action="/destinos/">
-                <input type="text" id="searchInput" name="q" placeholder="Buscar destino..." class="search-bar" value="{{ request.GET.q }}">
-                <button type="submit" id="searchButton" class="search-icon-btn">🔍</button>
-            </form>
-        </div>
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+        <form id="searchForm" class="search-box" method="GET" action="/destinos/">
+            <input
+                type="text"
+                id="searchInput"
+                name="q"
+                placeholder="Buscar destino..."
+                class="search-bar"
+                value="{{ request.GET.q }}">
+            <button
+                type="submit"
+                id="searchButton"
+                class="search-icon-btn">🔍</button>
+        </form>
+    </div>
 
-        <!-- Añadir destino -->
-        <button class="add-button" onclick="location.href='/agregar/'">
-            <i>Agregar Destino</i>
-        </button>
+    <!-- Filtros -->
+    <div class="filter-container">
+        <form
+            id="filterForm"
+            method="GET"
+            action="/destinos/"
+            class="filter-box">
+            
+            <!-- Conserva el término de búsqueda -->
+            <input type="hidden" name="q" value="{{ request.GET.q }}">
 
-        <div id="destinos-container" class="grid-container">
-            {% for destino in destinos %}
-            <div class="card mb-3" id="dest-item-{{ destino.id }}">
-                <h5 class="mb-1 text-capitalize">{{ destino.destino }}</h5>
-                {% if destino.imagen %}
-                <img src="{{ destino.imagen.url }}" alt="{{ destino.destino }}" class="card-img-top">
-                {% endif %}
-                <p class="mb-1 text-capitalize"><strong>País:</strong> {{ destino.pais }}</p>
-                <p class="mb-1 text-capitalize"><strong>Continente:</strong> {{ destino.continente }}</p>
-                <p class="mb-1 text-capitalize"><strong>Idioma:</strong> {{ destino.idioma }}</p>
-                <p class="mb-1 text-capitalize"><strong>Moneda:</strong> {{ destino.moneda }}</p>
-                <button class="delete-btn" onclick="deleteDest({{destino.id}})">🗑 Eliminar </button>
-                <button class="delete-btn" onclick="location.href='/edit_dest/{{destino.id}}/'">🖊️ Editar </button>
+            <!-- Filtro País -->
+            <div class="filter-group">
+                <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                    <option value="">Todos</option>
+                    {% for pais in paises %}
+                        <option
+                            value="{{ pais }}"
+                            {% if request.GET.pais == pais %}selected{% endif %}>
+                            {{ pais }}
+                        </option>
+                    {% endfor %}
+                </select>
             </div>
-            {% endfor %}
 
+            <!-- Filtro Continente -->
+            <div class="filter-group">
+                <label for="continente">Continente:</label>
+                <select id="continente" name="continente">
+                    <option value="">Todos</option>
+                    {% for continente in continentes %}
+                        <option
+                            value="{{ continente }}"
+                            {% if request.GET.continente == continente %}selected{% endif %}>
+                            {{ continente }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Filtro Idioma -->
+            <div class="filter-group">
+                <label for="idioma">Idioma:</label>
+                <select id="idioma" name="idioma">
+                    <option value="">Todos</option>
+                    {% for idioma in idiomas %}
+                        <option
+                            value="{{ idioma }}"
+                            {% if request.GET.idioma == idioma %}selected{% endif %}>
+                            {{ idioma }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Botón Filtrar -->
+            <button type="submit" class="filter-btn">Filtrar</button>
+        </form>
+    </div>
+
+    <!-- Añadir destino -->
+    <button
+        class="add-button"
+        onclick="location.href='/agregar/'">
+        <i>Agregar Destino</i>
+    </button>
+
+    <!-- Listado de destinos -->
+    <div id="destinos-container" class="grid-container">
+        {% for destino in destinos %}
+        <div class="card mb-3" id="dest-item-{{ destino.id }}">
+            <h5 class="mb-1 text-capitalize">{{ destino.destino }}</h5>
+            {% if destino.imagen %}
+            <img
+                src="{{ destino.imagen.url }}"
+                alt="{{ destino.destino }}"
+                class="card-img-top">
+            {% endif %}
+            <p class="mb-1 text-capitalize">
+                <strong>País:</strong> {{ destino.pais }}
+            </p>
+            <p class="mb-1 text-capitalize">
+                <strong>Continente:</strong> {{ destino.continente }}
+            </p>
+            <p class="mb-1 text-capitalize">
+                <strong>Idioma:</strong> {{ destino.idioma }}
+            </p>
+            <p class="mb-1 text-capitalize">
+                <strong>Moneda:</strong> {{ destino.moneda }}
+            </p>
+            <button
+                class="delete-btn"
+                onclick="deleteDest({{ destino.id }})">🗑 Eliminar</button>
+            <button
+                class="delete-btn"
+                onclick="location.href='/edit_dest/{{ destino.id }}/'">🖊️ Editar</button>
         </div>
+        {% endfor %}
     </div>
 
     <!-- Paginación -->
     <div class="pagination">
         {% if destinos.has_previous %}
-            <a href="?q={{ query }}&page={{ destinos.previous_page_number }}">&laquo; Anterior</a>
+            <a href="?q={{ request.GET.q }}&
+                     pais={{ request.GET.pais }}&
+                     continente={{ request.GET.continente }}&
+                     idioma={{ request.GET.idioma }}&
+                     page={{ destinos.previous_page_number }}">
+                « Anterior
+            </a>
         {% endif %}
-    
+
         {% for num in destinos.paginator.page_range %}
             {% if destinos.number == num %}
                 <span class="pagina-activa">{{ num }}</span>
             {% else %}
-                <a href="?q={{ query }}&page={{ num }}">{{ num }}</a>
+                <a href="?q={{ request.GET.q }}&
+                         pais={{ request.GET.pais }}&
+                         continente={{ request.GET.continente }}&
+                         idioma={{ request.GET.idioma }}&
+                         page={{ num }}">
+                    {{ num }}
+                </a>
             {% endif %}
         {% endfor %}
-    
+
         {% if destinos.has_next %}
-            <a href="?q={{ query }}&page={{ destinos.next_page_number }}">Siguiente &raquo;</a>
+            <a href="?q={{ request.GET.q }}&
+                     pais={{ request.GET.pais }}&
+                     continente={{ request.GET.continente }}&
+                     idioma={{ request.GET.idioma }}&
+                     page={{ destinos.next_page_number }}">
+                Siguiente »
+            </a>
         {% endif %}
     </div>
-    
-
-
+</div>
 
 <script>
     function deleteDest(destino_id) {
-      if (confirm("¿Estás seguro de que deseas eliminar este destino?")) {
-        fetch(`/delete_dest/${destino_id}/`, {
-          method: "DELETE",
-          headers: {
-            "X-CSRFToken": document.querySelector("[name=csrfmiddlewaretoken]")
-              .value,
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.status === "success") {
-              // Eliminar el elemento del DOM
-              const cardContainer = document.getElementById(
-                `dest-item-${destino_id}`
-              );
-              if (cardContainer) {
-                cardContainer.remove();
-              }
-              // Mostrar mensaje de éxito
-              alert(data.message);
-            } else {
-              alert(data.message);
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("Error al eliminar destino");
-          });
-      }
+        if (confirm("¿Estás seguro de que deseas eliminar este destino?")) {
+            fetch(`/delete_dest/${destino_id}/`, {
+                method: "DELETE",
+                headers: {
+                    "X-CSRFToken":
+                      document.querySelector("[name=csrfmiddlewaretoken]").value,
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    document
+                      .getElementById(`dest-item-${destino_id}`)
+                      .remove();
+                    alert(data.message);
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Error al eliminar destino");
+            });
+        }
     }
-  </script>
+</script>
 
-  {% endblock content %}
+{% endblock content %}
