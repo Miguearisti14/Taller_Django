@@ -83,11 +83,15 @@
     </div>
 
     <!-- Añadir destino -->
-    <button
-        class="add-button"
-        onclick="location.href='/agregar/'">
-        <i>Agregar Destino</i>
-    </button>
+     {% if user.is_authenticated %}
+        {% if perms.GoTravel.add_destinos %}
+            <button
+                class="add-button"
+                onclick="location.href='/agregar/'">
+                <i>Agregar Destino</i>
+            </button>
+        {%endif%}
+    {%endif%}
 
     <!-- Listado de destinos -->
     <div id="destinos-container" class="grid-container">
@@ -112,12 +116,18 @@
             <p class="mb-1 text-capitalize">
                 <strong>Moneda:</strong> {{ destino.moneda }}
             </p>
-            <button
+            {% if user.is_authenticated %}
+                {% if perms.GoTravel.delete_destinos %}
+                <button
                 class="delete-btn"
                 onclick="deleteDest({{ destino.id }})">🗑 Eliminar</button>
-            <button
+                {%endif%}
+                {% if perms.GoTravel.change_destinos %}
+                <button
                 class="delete-btn"
                 onclick="location.href='/edit_dest/{{ destino.id }}/'">🖊️ Editar</button>
+                {%endif%}
+            {%endif%}
         </div>
         {% endfor %}
     </div>

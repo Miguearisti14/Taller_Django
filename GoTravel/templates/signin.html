@@ -1,26 +1,64 @@
-{% extends "layout.html"%}
+{% extends "layout.html" %}
 {% block content %}
 
-    <!-- Sección de el formulario acompañado de la imagen -->
+<div class="container-login">
+  <div class="form-login">
+    <h1 data-i18n="Registrarse">Registrarse</h1>
+    <form id="registerForm" method="POST">
+      {% csrf_token %}
 
-    <div class="container-login">
-        <div class="form-login">
-            <h1 data-i18n="Registrarse">Registrarse</h1>
-            <form id="registerForm" method="POST">
-                {% csrf_token %}
-                <label for="username" data-i18n="Usuario">Usuario</label>
-                <input type="email" id="registerUsername" name="username" placeholder="Ingrese su usuario"
-                    data-i18n-placeholder="CampoUsuario" required>
+      <!-- Nombre -->
+      <label for="first_name" data-i18n="FirstName">Nombre</label>
+      <input
+        type="text"
+        id="first_name"
+        name="first_name"
+        placeholder="Ingrese su nombre"
+        required
+      >
 
-                <label for="password" data-i18n="Contraseña">Contraseña</label>
-                <input type="password" id="registerPassword" name="password" placeholder="Ingrese su contraseña"
-                    data-i18n-placeholder="CampoContraseña" required>
+      <!-- Apellido -->
+      <label for="last_name" data-i18n="LastName">Apellido</label>
+      <input
+        type="text"
+        id="last_name"
+        name="last_name"
+        placeholder="Ingrese su apellido"
+        required
+      >
 
-                <button type="submit" data-i18n="Registrarse">Registrarse</button>
-            </form>
+      <!-- Usuario (email) -->
+      <label for="username" data-i18n="Usuario">Usuario (email)</label>
+      <input
+        type="email"
+        id="registerUsername"
+        name="username"
+        placeholder="correo@ejemplo.com"
+        required
+      >
 
+      <!-- Contraseña -->
+      <label for="password" data-i18n="Contraseña">Contraseña</label>
+      <input
+        type="password"
+        id="registerPassword"
+        name="password"
+        placeholder="Ingrese su contraseña"
+        required
+      >
 
-        </div>
-    </div>
+      <!-- Rol / Grupo -->
+      <label for="group" data-i18n="Role">Rol</label>
+      <select id="group" name="group" required>
+        <option value="" disabled selected>Seleccione un rol</option>
+        {% for g in groups %}
+          <option value="{{ g.id }}">{{ g.name }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit" data-i18n="Registrarse">Registrarse</button>
+    </form>
+  </div>
+</div>
 
 {% endblock content %}

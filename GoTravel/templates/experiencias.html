@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="comentarios-container">
+  <h2>Comentarios</h2>
+
+  <!-- Formulario para nuevo comentario -->
+  {% if user.is_authenticated %}
+    <form method="POST" class="comentario-form">
+      {% csrf_token %}
+      
+        <textarea name="mensaje" placeholder="Escribe tu comentario..." required></textarea>
+        <button type="submit">Enviar</button>
+      
+    </form>
+  {%endif%}
+
+  <!-- Lista de comentarios -->
+  <div class="comentarios-lista">
+    {% if comentarios %}
+      {% for comentario in comentarios %}
+        <div class="comentario">
+          <strong>{{ comentario.usuario.username }}</strong> dijo:
+          <p>{{ comentario.mensaje }}</p>
+          <small>{{ comentario.fecha|date:"d/m/Y H:i" }}</small>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No hay comentarios aún. ¡Sé el primero en escribir uno!</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock content %}

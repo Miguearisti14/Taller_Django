@@ -42,14 +42,9 @@
                 {% if not mostrar_signin %}
                 <li><a href="/" data-i18n="home">Inicio</a></li>
                 <li class="destinos">
-
-                    {% if user.is_authenticated %}
-                        <a href="/destinos/" data-i18n="destinations">Destinos</a>
-                    {% else %}
-                    <a href="/#Destinos" data-i18n="destinations">Destinos</a>
-                    {% endif %}
+                    <a href="/destinos/" data-i18n="destinations">Destinos</a>             
                 </li>
-                <li><a href="/#Experiencias" data-i18n="experiences">Experiencias</a></li>
+                <li><a href="/experiencias/" data-i18n="experiences">Experiencias</a></li>
                 <li><a href="formulario/" data-i18n="contact">Contacto</a></li>
                 {% if user.is_authenticated %}
                     <li class="inicio_sesion"><a href="/logout/" data-i18n="CerrarSesion">Cerrar sesión</a></li>

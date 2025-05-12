@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Usuarios(models.Model):
@@ -22,4 +23,12 @@ class Destinos(models.Model):
 
     class Meta:
         db_table = "Destinos"
-    
+
+class Comentario(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    mensaje = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "Comentarios"
+        ordering = ['-fecha']

@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Destinos
+from .models import Destinos, Comentario
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.core.paginator import Paginator
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.http import require_http_methods
@@ -61,9 +61,23 @@ def destinos(request):
         'idioma_filtro': idioma_filtro,
     })
 
+def experiencias(request):
+    
+    if request.method == 'POST':
+        if not request.user.has_perm('GoTravel.add_comentarios'):
+            return render(request,"error.html")
+        mensaje = request.POST.get('mensaje', '').strip()
+        if mensaje:
+            Comentario.objects.create(usuario=request.user, mensaje=mensaje)
+            return redirect('/experiencias')
+
+    comentarios = Comentario.objects.all()
+    return render(request, 'experiencias.html', {'comentarios': comentarios})
+
 # Crear destinos
-@login_required
 def create_dest(request):
+    if not request.user.has_perm('GoTravel.add_destinos'):
+        return render(request,"error.html")
     if request.method == 'GET':
         return render(request, 'agregar.html')
 
@@ -119,6 +133,8 @@ def create_dest(request):
 @login_required
 @require_http_methods(["DELETE"])
 def delete_dest(request, destino_id):
+    if not request.user.has_perm('GoTravel.delete_destinos'):
+        return render(request,"error.html")
     try:
         destino = Destinos.objects.get(id=destino_id)
         destino.delete()
@@ -131,6 +147,8 @@ def delete_dest(request, destino_id):
 # Editar destinos
 @login_required
 def edit_dest(request, destino_id):
+    if not request.user.has_perm('GoTravel.change_destinos'):
+        return render(request,"error.html")
     destino = get_object_or_404(Destinos, id=destino_id)
 
     if request.method == 'POST':
@@ -176,26 +194,62 @@ def edit_dest(request, destino_id):
 
 # Registrar nuevo usuario
 def registrar_usuario(request):
+    grupos = Group.objects.all()
+
     if request.method == 'GET':
         return render(request, 'signin.html', {
-        'mostrar_signin': True
-    })
+            'mostrar_signin': True,
+            'groups': grupos
+        })
 
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+    # POST
+    username   = request.POST.get('username', '').strip()
+    password   = request.POST.get('password', '').strip()
+    first_name = request.POST.get('first_name', '').strip()
+    last_name  = request.POST.get('last_name', '').strip()
+    group_id   = request.POST.get('group')
 
-        if User.objects.filter(username=username).exists():
-            messages.error(request, 'Ese usuario ya existe.')
-        else:
-            User.objects.create_user(username=username, password=password)
-            messages.success(request, 'Usuario registrado correctamente.')
-            return redirect('/login/')
-        
+    # Validaciones básicas
+    if not (first_name and last_name and username and password and group_id):
+        messages.error(request, 'Todos los campos son obligatorios.')
+        return render(request, 'signin.html', {
+            'mostrar_signin': True,
+            'groups': grupos,
+            'first_name': first_name,
+            'last_name': last_name,
+            'username': username,
+            'selected_group': group_id
+        })
 
-    return render(request, 'signin.html', {
-        'mostrar_sigin': True
-    })
+    if User.objects.filter(username=username).exists():
+        messages.error(request, 'Ese usuario ya existe.')
+        return render(request, 'signin.html', {
+            'mostrar_signin': True,
+            'groups': grupos,
+            'first_name': first_name,
+            'last_name': last_name,
+            'username': username,
+            'selected_group': group_id
+        })
+
+    # Crear usuario
+    user = User.objects.create_user(
+        username=username,
+        password=password,
+        first_name=first_name,
+        last_name=last_name,
+        email=username
+    )
+
+    # Asignar el rol seleccionado
+    try:
+        grupo = Group.objects.get(id=group_id)
+        user.groups.add(grupo)
+    except Group.DoesNotExist:
+        pass
+
+    messages.success(request, 'Usuario registrado correctamente.')
+    return redirect('/login')
 
 # Iniciar sesión
 def iniciar_sesion(request):
