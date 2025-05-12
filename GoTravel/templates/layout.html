@@ -20,7 +20,32 @@
 
     <!-- LogRocket -->
     <script src="https://cdn.lgrckt-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('t0yjky/pythonserver');</script>
+    <script>
+    window.LogRocket && window.LogRocket.init('t0yjky/pythonserver');
+
+    {% if user.is_authenticated %}
+      // Identificar al usuario en LogRocket
+      window.LogRocket.identify('{{ user.id }}', {
+        name:  '{{ user.get_full_name|default:user.username|escapejs }}',
+        email: '{{ user.email|escapejs }}',
+        role:    '{{ user.groups.first.name|default:"" }}',
+      });
+    {% endif %}
+  </script>
+
+    <script>
+    LogRocket.init('TU-APP/ID');
+
+    {% if user.is_authenticated %}
+      // Identificamos al usuario real en LogRocket
+      LogRocket.identify('{{ user.id }}', {
+        name: '{{ user.get_full_name|escapejs }}',
+        email: '{{ user.email|escapejs }}',
+        // aquí cualquiera otra variable de usuario que quieras
+        subscriptionType: '{{ user.profile.subscription_type|default:"free"|escapejs }}'
+      });
+    {% endif %}
+  </script>
 
 </head>
 
@@ -45,7 +70,7 @@
                     <a href="/destinos/" data-i18n="destinations">Destinos</a>             
                 </li>
                 <li><a href="/experiencias/" data-i18n="experiences">Experiencias</a></li>
-                <li><a href="formulario/" data-i18n="contact">Contacto</a></li>
+                <li><a href="/formulario/" data-i18n="contact">Contacto</a></li>
                 {% if user.is_authenticated %}
                     <li class="inicio_sesion"><a href="/logout/" data-i18n="CerrarSesion">Cerrar sesión</a></li>
                 {% else %}

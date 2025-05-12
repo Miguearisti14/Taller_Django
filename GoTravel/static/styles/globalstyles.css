@@ -556,7 +556,7 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     margin: auto;
-    margin-top: 12%;
+    margin-top: 150px;
     margin-bottom: 5%;
     text-align: center;
 }
@@ -1165,5 +1165,89 @@ button:hover {
         top: 10px;
         right: 10px;
         width: 250px;
+    }
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Que la imagen ocupe todo el ancho y mantenga proporción */
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Espaciado interior */
+.card p,
+.card h5 {
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+
+    /* Buscador + filtros apilados */
+    .search-container,
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    /* Que los formularios ocupen ancho completo */
+    .search-box,
+    .filter-box {
+        width: 100%;
+    }
+
+    /* Ajuste de padding */
+    .search-box {
+        padding: 8px;
+    }
+
+    .filter-box {
+        padding: 8px;
+        justify-content: space-between;
+    }
+
+    /* Botones más grandes táctiles */
+    .filter-btn,
+    .search-icon-btn {
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    /* Select y input quedan bloque */
+    .filter-select,
+    .search-bar {
+        flex: none;
+        width: 100%;
+    }
+}
+
+
+/* Reducir márgenes en móviles para aprovechar el espacio */
+@media (max-width: 576px) {
+    .container-destinos {
+        margin-top: 120px;
+        padding: 0 10px;
+    }
+
+    .add-button {
+        width: 100%;
+        margin: 10px 0;
     }
 }
