@@ -32,6 +32,7 @@ urlpatterns = [
     path('agregar/', GoTravel.views.create_dest),
     path('delete_dest/<int:destino_id>/', GoTravel.views.delete_dest),
     path('logout/', GoTravel.views.cerrar_sesion),
-    path('edit_dest/<int:destino_id>/', GoTravel.views.edit_dest)
+    path('edit_dest/<int:destino_id>/', GoTravel.views.edit_dest),
+    path('mi_perfil/', GoTravel.views.editar_perfil)
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

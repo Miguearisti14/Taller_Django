@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container-login">
+  <div class="form-login">
+    <h1 data-i18n="EditUser">Editar Perfil</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+
+        <label for="first_name" data-i18n="FirstName">Nombre:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required>
+
+        <label for="last_name" data-i18n="LastName">Apellido:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required>
+      
+        <button type="submit" data-i18n="Save">Guardar Cambios</button>
+        <button type="button" class="cancel-btn" onclick="location.href='/'" data-i18n="Cancel">Cancelar</button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

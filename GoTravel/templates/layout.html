@@ -72,6 +72,7 @@
                 <li><a href="/experiencias/" data-i18n="experiences">Experiencias</a></li>
                 <li><a href="/formulario/" data-i18n="contact">Contacto</a></li>
                 {% if user.is_authenticated %}
+                    <li class="inicio_sesion"><a href="/mi_perfil/" data-i18n="miPerfil">Mi Perfil</a></li>
                     <li class="inicio_sesion"><a href="/logout/" data-i18n="CerrarSesion">Cerrar sesión</a></li>
                 {% else %}
                     <li class="inicio_sesion"><a href="/login/" data-i18n="IniciarSesion">Iniciar sesión</a></li>

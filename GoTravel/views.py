@@ -17,6 +17,30 @@ def index(request):
 def formulario(request):
     return render(request, 'formulario.html')
 
+# Editar el perfil
+@login_required
+def editar_perfil(request):
+
+    user = request.user
+
+    if request.method == 'POST':
+        try:
+            # Actualizar campos
+            user.first_name = request.POST.get('first_name').strip()
+            user.last_name = request.POST.get('last_name').strip()
+
+            # Guardar
+            user.save()
+            messages.success(request, 'Perfil actualizado correctamente.')
+            return redirect('/')
+        
+        except ValidationError as e:
+            messages.error(request, f"Error: {str(e)}")
+        except Exception as e:
+            messages.error(request, f"Error al actualizar el perfil: {str(e)}")
+
+    return render(request, 'perfil.html', {'user': user})
+
 # Mostrar los destinos
 def destinos(request):
     # Parámetros de búsqueda y filtro
@@ -40,8 +64,8 @@ def destinos(request):
     if idioma_filtro:
         destinos_list = destinos_list.filter(idioma=idioma_filtro)
 
-    # Paginación (9 por página)
-    paginator = Paginator(destinos_list, 9)
+    # Paginación (8 por página)
+    paginator = Paginator(destinos_list, 8)
     page_number = request.GET.get('page')
     destinos_page = paginator.get_page(page_number)
 
@@ -61,8 +85,8 @@ def destinos(request):
         'idioma_filtro': idioma_filtro,
     })
 
+# Sección de comentarios
 def experiencias(request):
-    
     if request.method == 'POST':
         if not request.user.has_perm('GoTravel.add_comentarios'):
             return render(request,"error.html")

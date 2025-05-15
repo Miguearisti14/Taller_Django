@@ -133,41 +133,30 @@
     </div>
 
     <!-- Paginación -->
-    <div class="pagination">
-        {% if destinos.has_previous %}
-            <a href="?q={{ request.GET.q }}&
-                     pais={{ request.GET.pais }}&
-                     continente={{ request.GET.continente }}&
-                     idioma={{ request.GET.idioma }}&
-                     page={{ destinos.previous_page_number }}">
-                « Anterior
-            </a>
-        {% endif %}
+<div class="pagination">
+  {% if destinos.has_previous %}
+    <a
+      href="?q={{ query }}&pais={{ pais_filtro }}&continente={{ continente_filtro }}&idioma={{ idioma_filtro }}&page={{ destinos.previous_page_number }}"
+    >&laquo; Anterior</a>
+  {% endif %}
 
-        {% for num in destinos.paginator.page_range %}
-            {% if destinos.number == num %}
-                <span class="pagina-activa">{{ num }}</span>
-            {% else %}
-                <a href="?q={{ request.GET.q }}&
-                         pais={{ request.GET.pais }}&
-                         continente={{ request.GET.continente }}&
-                         idioma={{ request.GET.idioma }}&
-                         page={{ num }}">
-                    {{ num }}
-                </a>
-            {% endif %}
-        {% endfor %}
+  {% for num in destinos.paginator.page_range %}
+    {% if destinos.number == num %}
+      <span class="pagina-activa">{{ num }}</span>
+    {% else %}
+      <a
+        href="?q={{ query }}&pais={{ pais_filtro }}&continente={{ continente_filtro }}&idioma={{ idioma_filtro }}&page={{ num }}"
+      >{{ num }}</a>
+    {% endif %}
+  {% endfor %}
 
-        {% if destinos.has_next %}
-            <a href="?q={{ request.GET.q }}&
-                     pais={{ request.GET.pais }}&
-                     continente={{ request.GET.continente }}&
-                     idioma={{ request.GET.idioma }}&
-                     page={{ destinos.next_page_number }}">
-                Siguiente »
-            </a>
-        {% endif %}
-    </div>
+  {% if destinos.has_next %}
+    <a
+      href="?q={{ query }}&pais={{ pais_filtro }}&continente={{ continente_filtro }}&idioma={{ idioma_filtro }}&page={{ destinos.next_page_number }}"
+    >Siguiente &raquo;</a>
+  {% endif %}
+</div>
+
 </div>
 
 <script>

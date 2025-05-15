@@ -1159,6 +1159,7 @@ button:hover {
     }
 }
 
+
 /* Responsive */
 @media (max-width: 600px) {
     .messages-container {
@@ -1249,5 +1250,85 @@ button:hover {
     .add-button {
         width: 100%;
         margin: 10px 0;
+    }
+}
+
+.container-login {
+    padding: 20px;
+}
+
+/* Cuadro del formulario */
+.form-login {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px 25px;
+    box-sizing: border-box;
+}
+
+/* Inputs y botón ya tienen estilos generales */
+/* Solo ajustamos tamaños y márgenes */
+
+@media (max-width: 768px) {
+    .form-login {
+        padding: 20px 15px;
+    }
+
+    .form-login h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .form-login label {
+        font-size: 0.95em;
+    }
+
+    .form-login input[type="text"],
+    .form-login input[type="email"],
+    .form-login input[type="password"],
+    .form-login select {
+        font-size: 0.95em;
+        padding: 8px 10px;
+    }
+
+    .form-login button[type="submit"] {
+        padding: 10px 0;
+        font-size: 0.95em;
+    }
+
+    .imagen-preview img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-login {
+        padding: 15px 10px;
+    }
+
+    .form-login h1 {
+        font-size: 1.5em;
+    }
+
+    .form-login input,
+    .form-login select {
+        padding: 6px 8px;
+        font-size: 0.9em;
+    }
+
+    .form-login button[type="submit"] {
+        padding: 8px 0;
+        font-size: 0.9em;
+    }
+
+    .imagen-preview {
+        text-align: center;
+    }
+
+    .imagen-preview img {
+        max-width: 100px;
+        max-height: 100px;
+        margin: auto;
     }
 }
